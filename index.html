@@ -8,34 +8,48 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- FIZZBUZZ by BABAK JAHANGIRI -->
     <script type="text/javascript">
-        function loadinit() {
+        function hideresult() {
             //hide the result bs alert first
             document.getElementById("result").style.visibility = 'hidden';
         }
 
         function CheckNum(num) {
+
             if (num == null || num == "") {
-                alert("Please type a Number !");
+                return false;
+            } else {
+                return true;
             }
+
         }
 
         function FizzBuzz(num) {
-            CheckNum(num);
 
-            var output = "";
+            hideresult();
 
-            if (num % 3 === 0 && num % 5 === 0) {
-                output = 'Fizz Buzz !';
-            } else if (num % 3 === 0) {
-                output = 'Fizz';
-            } else if (num % 5 === 0) {
-                output = 'Buzz';
+            if (CheckNum(num) == false) {
+                alert("Please type a Number !");
+                //break;
             } else {
-                output = ':(';
+
+                var output = "";
+
+                if (num % 3 === 0 && num % 5 === 0) {
+                    output = 'Fizz Buzz !';
+                } else if (num % 3 === 0) {
+                    output = 'Fizz';
+                } else if (num % 5 === 0) {
+                    output = 'Buzz';
+                } else {
+                    output = ':(';
+                }
+
+                setResult(output);
+                //babak jahangiri 
+
             }
 
-            setResult(output);
-            //babak jahangiri 
+
         }
 
         function setResult(txt) {
@@ -45,7 +59,7 @@
     </script>
 </head>
 
-<body onload="loadinit()">
+<body onload="hideresult()">
 
     <div class="container">
         <div class="row">
