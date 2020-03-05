@@ -2,5 +2,5 @@
 * text=auto
 *.js linguist-detectable=true
 *.css linguist-detectable=false
-*.htm linguist-detectable=false 
-*.html linguist-detectable=false 
+*.htm linguist-detectable=true 
+*.html linguist-detectable=true 
